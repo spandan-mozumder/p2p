@@ -34,7 +34,7 @@ const Navbar = () => {
                 <img
                   width="30"
                   height="25"
-                  src={theme=="light"?("https://img.icons8.com/ios-glyphs/30/chevron-up.png"):("https://img.icons8.com/ios-glyphs/30/FFFFFF/chevron-up.png")}
+                  src={theme=="light"?("https://img.icons8.com/ios-glyphs/30/212a31/chevron-up.png"):("https://img.icons8.com/ios-glyphs/30/d3d9d4F/chevron-up.png")}
                   alt="chevron-up"
                   className="rotate-180 transition-all duration-300"
                 />
@@ -42,7 +42,7 @@ const Navbar = () => {
                 <img
                   width="30"
                   height="25"
-                  src={theme=="light"?("https://img.icons8.com/ios-glyphs/30/chevron-up.png"):("https://img.icons8.com/ios-glyphs/30/FFFFFF/chevron-up.png")}
+                  src={theme=="light"?("https://img.icons8.com/ios-glyphs/30/212a31/chevron-up.png"):("https://img.icons8.com/ios-glyphs/30/d3d9d4/chevron-up.png")}
                   alt="chevron-up"
                   className="rotate-0 transition-all duration-300"
                 />
