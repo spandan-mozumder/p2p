@@ -2,19 +2,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap");
 
 :root {
-  --colour-1: #FFF2F2;
-  --colour-2: #A9B5DF;
-  --colour-3: #7886C7;
-  --colour-4: #2D336B;
+  --colour-1: #d3d9d4;
+  --colour-2: #748d92;
+  --colour-3: #1a6c8d;
+  --colour-4: #2e3944;
+  --colour-5: #212a31;
 }
 
 .dark {
-  --colour-1: #2D336B;
-  --colour-2: #7886C7;
-  --colour-3: #A9B5DF;
-  --colour-4: #FFF2F2;
+  --colour-1: #212a31;
+  --colour-2: #2e3944;
+  --colour-3: #1a6c8d;
+  --colour-4: #748d92;
+  --colour-5: #d3d9d4;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 body {
   font-family: "Parkinsans", serif;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--colour-3), var(--colour-5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
