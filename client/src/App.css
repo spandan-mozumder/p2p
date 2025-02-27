@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap");
+
+:root {
+  --colour-1: #FFF2F2;
+  --colour-2: #A9B5DF;
+  --colour-3: #7886C7;
+  --colour-4: #2D336B;
+}
+
+.dark {
+  --colour-1: #2D336B;
+  --colour-2: #7886C7;
+  --colour-3: #A9B5DF;
+  --colour-4: #FFF2F2;
+}
+
+body {
+  font-family: "Parkinsans", serif;
+}
