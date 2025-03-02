@@ -1,18 +1,28 @@
-import React from 'react'
-import { navCategories } from "../constants/index";
+import React from 'react';
+import { navCategories } from '../constants/index';
 
 const USPHome = () => {
   return (
-    <div className='h-full w-screen'>
-        <h1 className='text-4xl m-10'>Topics our Educators are skilled in</h1>
+    <div className="h-full">
+      <h1
+        className="gradient-text p-10 text-4xl"
+        style={{ textShadow: '1px 1px 2px var(--colour-4)' }}
+      >
+        We have skilled Educators from Every Domain
+      </h1>
 
-        <div>
+      <div className="flex flex-row items-center justify-center gap-5">
         {navCategories.map((category, index) => (
-          <li key={index} className="text-lg font-medium">{category.domain}</li>
+          <div
+            key={index}
+            className="rounded-md border border-[var(--colour-4)] px-5 py-7 text-lg font-medium"
+          >
+            {category.domain}
+          </div>
         ))}
-        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default USPHome
+export default USPHome;

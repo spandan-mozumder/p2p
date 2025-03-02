@@ -1,32 +1,37 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { navCategories } from "../constants/index";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { navCategories } from '../constants/index';
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     document.documentElement.className = theme;
-    localStorage.setItem("theme", theme);
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   return (
     <div>
       <nav
         id="navbar"
-        className="h-20 w-screen border-b-1 border-[var(--colour-4)]"
+        className="border-b-1 h-20 w-screen border-[var(--colour-4)]"
       >
-        <div className="flex items-center justify-between h-full px-8">
-          <h1 className="gradient-text text-4xl font-bold">PeerPals</h1>
+        <div className="flex h-full items-center justify-between px-8">
+          <h1
+            className="gradient-text text-4xl font-bold"
+            style={{ textShadow: '1px 1px 2px var(--colour-4)' }}
+          >
+            PeerPals
+          </h1>
 
-          <div className="flex flex-row justify-center items-center gap-10">
+          <div className="flex flex-row items-center justify-center gap-10">
             <button
-              className="cursor-pointer text-lg flex flex-row gap-2"
+              className="flex cursor-pointer flex-row gap-2 text-lg"
               onMouseEnter={() => setIsHovered(true)}
             >
               Categories
@@ -34,7 +39,11 @@ const Navbar = () => {
                 <img
                   width="30"
                   height="25"
-                  src={theme=="light"?("https://img.icons8.com/ios-glyphs/30/212a31/chevron-up.png"):("https://img.icons8.com/ios-glyphs/30/d3d9d4F/chevron-up.png")}
+                  src={
+                    theme == 'light'
+                      ? 'https://img.icons8.com/ios-glyphs/30/212a31/chevron-up.png'
+                      : 'https://img.icons8.com/ios-glyphs/30/d3d9d4F/chevron-up.png'
+                  }
                   alt="chevron-up"
                   className="rotate-180 transition-all duration-300"
                 />
@@ -42,7 +51,11 @@ const Navbar = () => {
                 <img
                   width="30"
                   height="25"
-                  src={theme=="light"?("https://img.icons8.com/ios-glyphs/30/212a31/chevron-up.png"):("https://img.icons8.com/ios-glyphs/30/d3d9d4/chevron-up.png")}
+                  src={
+                    theme == 'light'
+                      ? 'https://img.icons8.com/ios-glyphs/30/212a31/chevron-up.png'
+                      : 'https://img.icons8.com/ios-glyphs/30/d3d9d4/chevron-up.png'
+                  }
                   alt="chevron-up"
                   className="rotate-0 transition-all duration-300"
                 />
@@ -51,7 +64,7 @@ const Navbar = () => {
 
             <Link
               to="/"
-              className=" gradient-text underline underline-offset-3 decoration-[var(--colour-5)] cursor-pointer text-lg font-semibold"
+              className="gradient-text underline-offset-3 cursor-pointer text-lg font-semibold underline decoration-[var(--colour-4)]"
             >
               Become an Educator
             </Link>
@@ -62,13 +75,13 @@ const Navbar = () => {
 
             <Link
               to="/"
-              className="text-lg rounded-md px-5 py-1.5 text-[var(--colour-5)] hover:text-[var(--colour-1)] bg-transparent border border-[var(--colour-4)] hover:bg-[linear-gradient(to_right,var(--colour-3),var(--colour-5))] transition-all cursor-pointer"
+              className="cursor-pointer rounded-md border border-[var(--colour-4)] bg-transparent px-5 py-1.5 text-lg text-[var(--colour-4)] transition-all hover:bg-[linear-gradient(to_right,var(--colour-3),var(--colour-5))] hover:text-[var(--colour-1)]"
             >
               Join
             </Link>
 
             <button onClick={toggleTheme} className="ml-10 cursor-pointer">
-              {theme === "light" ? (
+              {theme === 'light' ? (
                 <img
                   width="35"
                   height="35"
@@ -90,23 +103,23 @@ const Navbar = () => {
 
       {isHovered && (
         <div
-          className="absolute bg-[var(--colour-1)] shadow-lg rounded-lg z-10 h-[80vh] grid grid-cols-3 gap-2 right-10 overflow-x-scroll p-3 border mt-[-10px]"
+          className="absolute right-10 z-10 mt-[-10px] grid h-[80vh] grid-cols-3 gap-2 overflow-x-scroll rounded-lg border bg-[var(--colour-1)] p-3 shadow-lg"
           onMouseLeave={() => setIsHovered(false)}
         >
           {navCategories.map((category, index) => (
             <div
               key={index}
-              className="border-b-1 border-[var(--colour-5)] p-2"
+              className="border-b-1 border-[var(--colour-4)] p-2"
             >
-              <p className="px-4 py-2 font-bold text-[var(--colour-3)] text-md">
+              <p className="px-5 py-2 text-lg font-bold text-[var(--colour-3)]">
                 {category.domain}
               </p>
 
               {category.subdomains.map((subdomain, subIndex) => (
                 <Link
                   key={subIndex}
-                  to={`/category/${subdomain.toLowerCase().replace(/ /g, "-")}`}
-                  className="block px-6 py-2 text-[var(--colour-5)] hover:bg-[var(--colour-2)] hover:font-semibold rounded-lg text-sm"
+                  to={`/category/${subdomain.toLowerCase().replace(/ /g, '-')}`}
+                  className="block rounded-lg px-6 py-2 text-sm text-[var(--colour-4)] hover:bg-[var(--colour-3)] hover:font-semibold"
                 >
                   {subdomain}
                 </Link>

@@ -1,20 +1,20 @@
-@import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap");
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
 
 :root {
-  --colour-1: #d3d9d4;
-  --colour-2: #748d92;
-  --colour-3: #1a6c8d;
-  --colour-4: #2e3944;
-  --colour-5: #212a31;
+  --colour-1: #fff6e0;
+  --colour-2: #d8d9da;
+  --colour-3: #61677a;
+  --colour-4: #272829;
+  --colour-5: #a7d129;
 }
 
 .dark {
-  --colour-1: #212a31;
-  --colour-2: #2e3944;
-  --colour-3: #1a6c8d;
-  --colour-4: #748d92;
-  --colour-5: #d3d9d4;
+  --colour-1: #272829;
+  --colour-2: #61677a;
+  --colour-3: #d8d9da;
+  --colour-4: #fff6e0;
+  --colour-5: #a7d129;
 }
 
 *::-webkit-scrollbar {
@@ -22,11 +22,11 @@
 }
 
 body {
-  font-family: "Parkinsans", serif;
+  font-family: 'Parkinsans', serif;
 }
 
 .gradient-text {
-  background: linear-gradient(to right, var(--colour-3), var(--colour-5));
+  background: linear-gradient(to right, var(--colour-3), var(--colour-4));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
