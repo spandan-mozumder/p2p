@@ -17,10 +17,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav
-        id="navbar"
-        className="border-b-1 h-20 w-screen border-[var(--colour-4)]"
-      >
+      <nav id="navbar" className="h-20 w-screen border-b-1 border-gray-300">
         <div className="flex h-full items-center justify-between px-8">
           <h1
             className="gradient-text text-4xl font-bold"
@@ -64,7 +61,7 @@ const Navbar = () => {
 
             <Link
               to="/"
-              className="gradient-text underline-offset-3 cursor-pointer text-lg font-semibold underline decoration-[var(--colour-4)]"
+              className="gradient-text cursor-pointer text-lg font-semibold underline decoration-[var(--colour-4)] underline-offset-3"
             >
               Become an Educator
             </Link>
